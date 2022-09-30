@@ -23,7 +23,7 @@
 * Group 21: hecn, behv, aarv
 * Group 22: frepe, nihp, siol
 * Group 23: lufr, tuka, tokj
-* Group 24: emtj, mwha, biha
+* Group 24: clly, sibh, biha
 * Group 25: amdh, mbjn, selb
 * Group 26: dlha, jawb, ssbo
 * Group 27: unla, bath, midf
