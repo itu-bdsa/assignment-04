@@ -119,13 +119,17 @@ public class WorkItemRepository : IWorkItemRepository
             return Response.NotFound;
         }
         
-        if(workitem.State == State.New) _context.Items.Remove(workitem);
-        else if (workitem.State == State.Active) {
+        if(workitem.State == State.New) 
+        {
+            _context.Items.Remove(workitem);
+        }
+        else if (workitem.State == State.Active) 
+        {
             workitem.State = State.Removed;
             workitem.StateUpdated = DateTime.UtcNow;
         }
         else return Response.Conflict;
-        
+        _context.SaveChanges();
         return Response.Deleted;
     }
 
