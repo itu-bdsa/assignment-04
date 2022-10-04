@@ -18,7 +18,7 @@ public class TagRepository : ITagRepository
     public TagDTO Find(int tagId)
     {
         var entity = _context.Tags.FirstOrDefault(t => t.Id == tagId);
-        if(entity == null) return null;
+        if(entity == null) return null!;
         return new TagDTO(tagId, entity.Name);
     }
     public Response Update(TagUpdateDTO tag)
