@@ -116,5 +116,60 @@ class State{
     Closed
     Removed
 }
+```
+
+## Excercise 4
+
+```mermaid
+classDiagram
+Animal <|-- Giraf
+Animal <|-- Lion
+Animal <|-- Human
+Cutlury <-- Human
+class Animal{
+    <<abstract>>
+    +Eat()
+    +Move()
+}
+class Giraf{
+    
+}
+class Lion{
+    
+}
+class Human{
+    +Cutlury knife
+    +Cutlury fork
+}
+```
+
+## Excercise 5
+
+```mermaid
+classDiagram
+ILiving <|.. Animal
+ILiving <|.. Human
+Animal <|-- Giraf
+Animal <|-- Lion
+Cutlery <-- Human
+class ILiving{
+    <<interface>>
+    +Move()
+    
+}
+class Animal{
+    <<abstract>>
+    +Feed()
+}
+class Giraf{
+    
+}
+class Lion{
+    
+}
+class Human{
+    +Eat(Cutlery knife, Cutlery fork)
+}
+
 
 ```
