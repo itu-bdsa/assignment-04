@@ -17,9 +17,13 @@ public class WorkItemRepository : IWorkItemRepository
 
         if(assignedUser == null && item.AssignedToId != null) return (Response.BadRequest, 0);
 
-        ICollection<Tag> tags = new List<Tag>();
+        var tagsDB = _context.Tags.ToList();
+        ICollection<Tag> tags = item.Tags.Count != 0 ? tagsDB
+            .Where(tag => item.Tags.Contains(tag.Name))
+            .ToList() 
+            : new List<Tag>();
         
-        entity.Description = item.Description;
+        entity.Description = item.Description!;
         entity.State = State.New;
         entity.AssignedTo = assignedUser;
         entity.Tags = tags;
@@ -80,7 +84,7 @@ public class WorkItemRepository : IWorkItemRepository
 
 
         var tasks = from t in _context.Items
-            select new WorkItemDTO(t.Id, t.Title, t.AssignedTo.Name, t.Tags.Select(x => x.Name).ToList(), t.State);
+            select new WorkItemDTO(t.Id, t.Title, t.AssignedTo!.Name, t.Tags.Select(x => x.Name).ToList(), t.State);
 
         return tasks.ToList();
     }
@@ -97,7 +101,7 @@ public class WorkItemRepository : IWorkItemRepository
         if(assignedUser == null) return Response.BadRequest;
 
         entity.Title = workitem.Title;
-        entity.Description = workitem.Description;
+        entity.Description = workitem.Description!;
         entity.AssignedTo = assignedUser;
         entity.Tags = workitem.Tags.Select(name => new Tag(name))
             .ToList();
@@ -143,7 +147,7 @@ public class WorkItemRepository : IWorkItemRepository
         }
         
         var workitem = from t in _context.Items where t.Id == workItemId 
-        select new WorkItemDetailsDTO(t.Id, t.Title, t.Description, t.Created, t.AssignedTo.Name, t.Tags.Select(x => x.Name).ToList(), t.State, t.StateUpdated);
+        select new WorkItemDetailsDTO(t.Id, t.Title, t.Description, t.Created, t.AssignedTo!.Name, t.Tags.Select(x => x.Name).ToList(), t.State, t.StateUpdated);
         return workitem.First();
     }
 }
