@@ -1,0 +1,5 @@
+@startuml
+Class1 <|-- ChildClass1
+Class1 <|-- ChildClass2
+ChildClass1 <|-- GrandChildClass1
+@enduml

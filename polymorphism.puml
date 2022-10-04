@@ -1,0 +1,13 @@
+@startuml
+class Animal{
+    +void die()
+}
+
+Animal <|-- Dog
+Dog <|-- Husky
+Animal <|-- Fish
+
+Fish <|-- Salmon
+Fish <|-- Tuna
+
+@enduml
