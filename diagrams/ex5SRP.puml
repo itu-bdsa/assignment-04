@@ -1,0 +1,25 @@
+@startuml
+
+class Zoo{
+    -Animals : List<Animal>
+    -Visitors : List>Visitor>
+    +sellTicket() : Ticket
+    +feedAllANimals() : void
+    +purchaseNewAnimal() : Animal
+}
+
+class Visitor{
+    +petAnimal(a : Animal): void
+    +buyTicket() : bool
+}
+
+abstract class Animal{
+    
+    +eat() : void
+    +sleep() : void
+}
+
+Zoo --> Animal
+Animal <-- Visitor : petAnimal()
+Visitor <-- Zoo : sellTicket()
+@enduml

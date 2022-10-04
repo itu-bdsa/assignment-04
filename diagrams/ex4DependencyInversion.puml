@@ -1,0 +1,12 @@
+@startuml
+class Zoo{
+    +Giraffes : List<Giraffe>
+    +Zebras : List<Zebra>
+    +Lions : List<Lion>
+    +void feedAllAnimals()
+}
+
+Zoo --> Lion
+Zoo --> Giraffe
+Zoo --> Zebra
+@enduml
