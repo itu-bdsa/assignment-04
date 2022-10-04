@@ -27,7 +27,7 @@
 * Group 25: amdh, mbjn, selb
 * Group 26: dlha, jawb, ssbo
 * Group 27: unla, bath, midf
-* Group 28: eikb, atro, asjo
+* Group 28: monha, atro, annro
 * Group 29: phla, mbln, mhvl
 * Group 30: crco, okre, raoo
 * Group 31: emno, rogy, skas
