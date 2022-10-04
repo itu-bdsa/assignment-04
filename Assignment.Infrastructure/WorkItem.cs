@@ -2,17 +2,23 @@ namespace Assignment.Infrastructure;
 
 public class WorkItem
 {
-    public int Id { get; set; }
+    public virtual int Id {get; set;}
+    
+    [Required]
+    [StringLength(100)]
+    public virtual string Title {get; set;}
 
-    public string Title { get; set; }
+    public virtual User? AssignedTo {get; set;}
 
-    public int? AssignedToId { get; set; }
+    public virtual string? Description {get; set;}
+    [Required]
+    public virtual State State {get; set;}
 
-    public User? AssignedTo { get; set; }
+    public virtual ICollection<Tag> Tags {get; set;}
 
-    public State State { get; set; }
+    public virtual DateTime Created {get; set;}
 
-    public ICollection<Tag> Tags { get; set; }
+    public virtual DateTime StateUpdated {get; set;}
 
     public WorkItem(string title)
     {

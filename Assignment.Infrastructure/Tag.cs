@@ -2,13 +2,15 @@ namespace Assignment.Infrastructure;
 
 public class Tag
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public ICollection<WorkItem> WorkItems { get; set; }
+    public virtual int Id {get; set;}
+    [Required]
+    [StringLength(50)]
+    public virtual string Name{get; set;}//Should be unique, how do we enforce that
+    public virtual ICollection<WorkItem> WorkItems{get; set;}
 
-    public Tag(string name)
+    public Tag(String name)
     {
-        Name = name;
         WorkItems = new HashSet<WorkItem>();
+        Name = name;
     }
 }
