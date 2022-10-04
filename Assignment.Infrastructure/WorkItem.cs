@@ -14,6 +14,10 @@ public class WorkItem
 
     public ICollection<Tag> Tags { get; set; }
 
+    public DateTime Created {get; set;}
+
+    public DateTime StateUpdated {get; set;}
+
     public WorkItem(string title)
     {
         Title = title;

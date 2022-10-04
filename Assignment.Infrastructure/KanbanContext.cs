@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 namespace Assignment.Infrastructure;
 
 public class KanbanContext : DbContext
