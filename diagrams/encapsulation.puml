@@ -1,0 +1,7 @@
+@startuml
+class Class{
+    +Type Data
+void methodThatActsOnType()
+}
+
+@enduml
