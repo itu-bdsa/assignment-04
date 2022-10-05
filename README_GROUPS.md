@@ -25,7 +25,7 @@
 * Group 21: behv, aarv
 * Group 22: aldy, nihp, jklo
 * Group 23: lufr, tuka, tokj
-* Group 24: emtj, biha
+* Group 24: sibh, biha,clly
 * Group 25: amdh, selb
 * Group 26: dlha, jawb, ssbo
 * Group 27: bath
