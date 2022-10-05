@@ -31,7 +31,6 @@ public class WorkItemRepositoryTests : IDisposable
         //Arrange
         var workItemDTO = new WorkItemCreateDTO("UI Layout", null, "Redo design of ui layout", new List<string>() { "something", "somethign else"});
 
-
         //Act
         var (response, workItemid) = _repository.Create(workItemDTO);
         var workItem = _context.Items.Find(workItemid);

@@ -4,6 +4,7 @@ public class UserRepositoryTests : IDisposable
 {
     private readonly KanbanContext _context;
     private readonly UserRepository _repository;
+     private readonly WorkItemRepository _workItemRepository;
 
     public UserRepositoryTests()
     {
@@ -27,6 +28,27 @@ public class UserRepositoryTests : IDisposable
 
         _context = context;
         _repository = new UserRepository(_context);
+        _workItemRepository = new WorkItemRepository(_context);
+    }
+
+    [Fact]
+    public void Delete_user_assigned_to_WorkItem_without_force_returns_conflict(){
+        var (userRes, userId) = _repository.Create(new UserCreateDTO("navn1", "email1"));
+        var workItemDTO = new WorkItemCreateDTO("UI Layout", userId, "Redo design of ui layout", new List<String>{"tag-navn"});
+        var (workItemRes, workItemId) = _workItemRepository.Create(workItemDTO);
+
+        var deletedResponse = _repository.Delete(userId, false);
+        Assert.Equal(Response.Conflict, deletedResponse);
+    }
+
+    [Fact]
+    public void Delete_user_assigned_to_WorkItem_with_force_returns_deleted(){
+        var (userRes, userId) = _repository.Create(new UserCreateDTO("navn1", "email1"));
+        var workItemDTO = new WorkItemCreateDTO("UI Layout", userId, "Redo design of ui layout", new List<String>{"tag-navn"});
+        var (workItemRes, workItemId) = _workItemRepository.Create(workItemDTO);
+
+        var deletedResponse = _repository.Delete(userId, true);
+        Assert.Equal(Response.Deleted, deletedResponse);
     }
 
     [Fact]

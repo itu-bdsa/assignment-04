@@ -28,6 +28,8 @@ public class WorkItemRepository : IWorkItemRepository
         entity.AssignedTo = assignedUser;
         entity.Tags = tags;
 
+        if(assignedUser != null) entity.State = State.Active;
+
         var taskExists = _context.Items.FirstOrDefault(t => t.Id == entity.Id) != null;
         
         if(taskExists)
