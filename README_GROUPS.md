@@ -7,7 +7,7 @@
 * Group 3: mlth, oljh
 * Group 4: dadh, mbia
 * Group 5: otja, luel
-* Group 6: clly, jric
+* Group 6: jric
 * Group 6: frai, asjo, nlje, frhc
 * Group 7: memr, luha, frepe
 * Group 8: siar, gues, adjr
