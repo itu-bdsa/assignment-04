@@ -16,7 +16,7 @@
 * Group 14: tbru, hast, shho
 * Group 15: mreh, nicha, mgan
 * Group 16: brml, phimo, chbl
-* Group 17: frgm, avia
+* Group 17: , avia
 * Group 18: fefa, vist, asly
 * Group 19: ehel, jakst, olfw, lawu
 * Group 20: labp, tosp, bhag
@@ -53,4 +53,4 @@
 * Group 51: elbr, tuho, kbej
 * Group 52: maxt, siol, kmey, mhsi
 * Group 53: mhvl, lanr, midf
-* Group 54: jric
+* Group 54: jric, frgm
